@@ -1,0 +1,112 @@
+.content {
+   float: left;
+   margin: 5px;
+   padding: 10px;
+   width: 220px;
+   height: 240px;
+   border: 1px solid black;
+}
+
+.content-end {
+   /*float: left;*/
+   margin: 5px;
+   padding: 10px;
+   /*border: 1px solid black;*/
+   clear: left;
+}      
+
+foot {
+   float: left-side;
+   margin: 5px;
+   padding: 10px;
+/*   width: 220px;
+   height: 240px;*/
+   border: none;
+}   
+
+#nav {
+    line-height:120%;
+    background-color:#eeeeee;
+    /*height:400px;*/
+    width:140px;
+    float:left;
+    padding:5px;} 
+
+fronthead
+{
+font-family:Arial;
+font-weight:bold;
+font-size:18px;
+}
+
+
+blueitalic
+{
+
+font-family:Arial;
+font-weight:bold;
+font-size:16px;
+font-style:italic;
+/*vertical-align:bottom;*/
+color:blue;
+padding-left:10px;
+}
+
+parahead
+{
+font-family:Arial;
+font-weight:bold;
+font-size:14px;
+vertical-align:top;
+line-height:1;
+padding-left:10px;
+}
+
+
+paratext
+{
+font-family:Arial;
+font-size:10px;
+vertical-align:top;
+line-height:1.5;
+width:100px;
+height:180px;
+}
+
+
+
+paralink
+{
+font-family:Arial;
+font-size:12px;
+vertical-align:top;
+line-height:1.5;
+}
+
+H3
+{
+font-family:Verdana;
+font-size:12px;
+text-align:center;
+font-weight:bold;
+text-decoration:underline;
+line-height:150%;
+}
+
+sidebarheader
+{
+font-family:Verdana;
+font-size:12px;
+text-align:center;
+font-weight:bold;
+text-decoration:underline;
+line-height:150%;
+}
+
+
+sidebarlink
+{
+font-family:Arial;
+font-size:10px;
+line-height:120%;
+}
