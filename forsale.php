@@ -7,7 +7,6 @@ print("<title>$_GET[pagetitle]</title>");
 $fsconnect=mysqli_connect("localhost","dbagent","patches","forsale");
 $dbquery="select * from " . $_GET['table'];
 $colquery = "select descr from colnames where name = '" . $_GET['table'] . "'";
-/*$result = $fsconnect->query($dbquery);*/
 $result = $fsconnect->query($dbquery);
 $colresult = $fsconnect->query($colquery);
 $colString = $colresult->fetch_row();
@@ -17,7 +16,8 @@ $colArray = explode("?",$colString[0]);
 <link rel="stylesheet" type="text/css" href="./css/fbstyle.css" />
 <link rel="stylesheet" type="text/css" href="./css/fbmenu.css" />
 <link rel="stylesheet" href="./css/bootstrap.min.css">
-<script src=".scripts/jquery.min.js"></script>
+<!--<script src=".scripts/jquery.min.js"></script>*-->
+<script src="./scripts/jquery-1.11.3.min.js"></script>
 <script src="./scripts/bootstrap.min.js"></script>
 <script src="./scripts/lib.js"></script>
 <style>
@@ -56,8 +56,10 @@ $colArray = explode("?",$colString[0]);
       <?php
       print("<div class='describeheader'>" . $_GET['pagetitle'] .  "</div>'");
          print("<div class = 'describetext'>");
+         $itemnumber = 1;
+         $itemCount = 1;
          while($specs = $result->fetch_row()){
-            print("<div class = 'row'>");
+            print("<div class = 'row' id = 'item" . $itemCount . "' style='display:none'>");
             echo("<div class = 'col-sm-3' style='padding-top:20px'>");
                echo "<div>" . $colArray[0] . ": " . $_GET['table'] . "-" . $specs[0] . "</div>";
                $i=1;
@@ -78,6 +80,7 @@ $colArray = explode("?",$colString[0]);
                }
             echo("</div>");
           echo("</div>");
+          $itemCount++;
          }
       print("</div>");
       ?>
@@ -90,6 +93,14 @@ footer();
 document.getElementById("headerGraphic").innerHTML="<img src='./images/fbheadersvc.jpg'>";
 document.getElementById("headerMenu").innerHTML=menuBar();
 document.getElementById("sidebar").innerHTML=sideBar();
+<?php
+$delayIncrement = 500;
+for($c=1; $c <= $itemCount ; $c++){
+   echo "$(document).ready(function(){	
+      $('#item" . $c . "').delay(" . $c * 200 . ").fadeIn(1000);
+   });";
+}
+?>
 </script>
 </body>
 </html>
