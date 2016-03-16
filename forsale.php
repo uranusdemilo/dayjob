@@ -94,10 +94,10 @@ document.getElementById("headerGraphic").innerHTML="<img src='./images/fbheaders
 document.getElementById("headerMenu").innerHTML=menuBar();
 document.getElementById("sidebar").innerHTML=sideBar();
 <?php
-$delayIncrement = 500;
+$delayIncrement = 300;
 for($c=1; $c <= $itemCount ; $c++){
    echo "$(document).ready(function(){	
-      $('#item" . $c . "').delay(" . $c * 200 . ").fadeIn(1000);
+      $('#item" . $c . "').delay(" . $c * $delayIncrement . ").fadeIn(600);
    });";
 }
 ?>
