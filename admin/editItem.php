@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+</head>
+<body>
 <?php
 $fsconnect=mysqli_connect("localhost","dbagent","patches","forsale");
 $itemInfoQuery = "select * from " . $_GET['dbtable'] . " where item = " . $_GET['item'];
@@ -47,8 +53,10 @@ echo "<span class='editbutton'><button type = 'button'
 echo "<span class='editbutton'><button type = 'button' class='editbutton' "
    . "onclick='upLoadImageDialog()'>New Pic</button></span>";
 //Delete Pic Button
-echo "<span class='editbutton'><button type = 'button' onclick=deletepic('" . $_GET['dbtable'] 
+echo "<span class='editbutton'><button type='button' onclick=deleteItem('" . $_GET['dbtable'] 
    . "','" . $_GET['item'] 
    . "')>Delete Pic</button></span></div>";
 echo "</form>";
 ?>
+</body>
+</html>
